@@ -1,0 +1,189 @@
+/* App.css */
+
+/* Light mode (default) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+.App {
+  background: #f4f6fa;
+  color: #18191a;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+main {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Card and section backgrounds */
+.about__card,
+.education__card,
+.skills__category,
+.skills__soft-card,
+.skills__tool-card,
+.projects__card,
+.contact__form,
+.contact__card {
+  background: #f8fafc;
+  color: #18191a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-primary:hover {
+  background: #0056b3;
+}
+.btn-outline {
+  background: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:hover {
+  background: #e3e9f7;
+}
+
+/* Dark mode */
+.App.dark-mode,
+.App.dark-mode main {
+  background: #181c24 !important;
+  color: #f5f6fa;
+}
+.App.dark-mode .hero,
+.App.dark-mode .about,
+.App.dark-mode .education,
+.App.dark-mode .skills,
+.App.dark-mode .projects,
+.App.dark-mode .contact {
+  background: #181c24 !important;
+}
+.App.dark-mode .about__card,
+.App.dark-mode .education__card,
+.App.dark-mode .skills__category,
+.App.dark-mode .skills__soft-card,
+.App.dark-mode .skills__tool-card,
+.App.dark-mode .projects__card,
+.App.dark-mode .contact__form,
+.App.dark-mode .contact__card {
+  background: #23283b;
+  color: #f5f6fa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.App.dark-mode .btn-primary {
+  background: #fff;
+  color: #23283b;
+}
+.App.dark-mode .btn-primary:hover {
+  background: #007bff;
+  color: #fff;
+}
+.App.dark-mode .btn-outline {
+  background: #23283b;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.App.dark-mode .btn-outline:hover {
+  background: #181c24;
+  color: #fff;
+}
+.App.dark-mode .hero__skills span,
+.App.dark-mode .projects__tech span {
+  background: #23283b;
+  color: #fff;
+}
+.App.dark-mode .profile-placeholder {
+  background: #23283b;
+  color: #bbb;
+}
+.App.dark-mode .footer {
+  background: #101114;
+  color: #f5f6fa;
+}
+.App.dark-mode .navbar {
+  background: #23283b;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.App.dark-mode .navbar__links li a {
+  color: #fff;
+}
+.App.dark-mode .navbar__links li a:hover {
+  color: #4ea1f7;
+}
+* {
+  transition: background 0.3s, color 0.3s;
+}
+body, .App, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
+  font-family: 'Inter', 'Roboto', 'Poppins', Arial, Helvetica, sans-serif;
+  font-display: swap;
+}
+
+
+/* Keyframe Animations */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-section {
+    transition: none;
+    animation: none;
+  }
+  
+  .scroll-section.animate-in {
+    opacity: 1;
+    transform: none;
+  }
+}

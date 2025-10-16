@@ -1,0 +1,378 @@
+.skills {
+  padding: 4rem 2rem 2rem 2rem;
+  background: #ecebed;
+  text-align: center;
+}
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.skills h2 span {
+  color: #007bff;
+}
+.skills__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0 2rem 0;
+}
+.skills__tabs button {
+  background: #fff;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.skills__tabs button.active, .skills__tabs button:hover {
+  background: #007bff;
+  color: #fff;
+}
+.skills__categories {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.skills__category {
+  background: #f7f9fb;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.skills__category h3 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Category title with icon */
+.skills__category .skills__category-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.75rem 0;
+  text-decoration: none; /* we'll add an underline accent */
+  position: relative;
+}
+
+.skills__category-title span {
+  font-weight: 700;
+
+}
+
+.skills__category-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 36%;
+  height: 3px;
+  background: linear-gradient(90deg, #4f8cff 0%, #20c997 100%);
+  border-radius: 2px;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+}
+
+/* Dark mode adjustments */
+body.dark-mode .skills__category-title span {
+  color: #ffffff;
+}
+body.dark-mode .skills__category-title::after {
+  opacity: 0.9;
+}
+.skills__bar {
+  margin: 0.7rem 0;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.skill-name-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.skill-name-with-icon svg {
+  font-size: 1.2rem;
+  min-width: 1.2rem;
+}
+.bar {
+  background: #e5e7eb;
+  border-radius: 6px;
+  height: 8px;
+  width: 100%;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.bar__fill {
+  background: linear-gradient(90deg, #4f8cff 0%, #20c997 100%);
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  transition: width 0.8s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar__fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+.level {
+  display: inline-block;
+  font-weight: bold;
+  color: #00c8ff;
+  font-size: 0.8rem;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: #555555;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  white-space: nowrap;
+}
+.skills__soft {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skills__soft-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  min-width: 220px;
+  max-width: 260px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: left;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+.skills__soft-card .soft-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.skills__soft-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #18191a;
+}
+.skills__tools {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.skills__tool-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  min-width: 220px;
+  max-width: 260px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: left;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.tool-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.skills__tool-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #18191a;
+  display: flex;
+  text-decoration: underline;
+  align-items: center;
+  gap: 0.5rem;
+}
+.skills__tool-card ul {
+  list-style: none;
+  padding: 0;
+}
+.skills__tool-card li {
+  margin-bottom: 0.5rem;
+  color: #007bff;
+  font-weight: 500;
+}
+.skill-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+.skill-icon-circle img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+.skills__soft-card .level {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: #555555;
+  color: #00c8ff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+} 
+@media (max-width: 1024px) {
+  .skills__categories, .skills__tools {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .skills__soft {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .skills {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  .skills__categories, .skills__tools {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .skills__soft {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .skills__category, .skills__soft-card, .skills__tool-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .skills__tabs button {
+    display: block;
+    flex: 0 0 auto;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+  }
+}
+body.dark-mode .skills {
+  background: #18191a;
+  color: #f5f6fa;
+}
+body.dark-mode .skills__category, body.dark-mode .skills__soft-card, body.dark-mode .skills__tool-card {
+  background: #23272f;
+  color: #f5f6fa;
+}
+body.dark-mode .bar__fill {
+  background: #4ea1f7;
+}
+
+/* Horizontal marquee for skills under each category */
+.skills__marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px dashed rgba(0,0,0,0.08);
+  border-bottom: 1px dashed rgba(0,0,0,0.08);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.skills__marquee-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  white-space: nowrap;
+  will-change: transform;
+  animation: skills-marquee-scroll 18s linear infinite;
+}
+
+.skills__marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #007bff;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.skills__marquee-item svg {
+  font-size: 1rem;
+}
+
+.skills__marquee:hover .skills__marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes skills-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Dark mode tweaks for marquee */
+body.dark-mode .skills__marquee {
+  border-color: rgba(255,255,255,0.08);
+}
+body.dark-mode .skills__marquee-item {
+  color: #4ea1f7;
+}

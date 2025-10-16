@@ -1,0 +1,176 @@
+.footer {
+  background: #000305;
+  color: #fdfdfd;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1rem;
+ 
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__social-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* LinkedIn - Blue */
+.footer__social-link:nth-child(1) {
+  background: #0077b5;
+}
+
+.footer__social-link:nth-child(1):hover {
+  background: #005885;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.4);
+}
+
+/* GitHub - Dark */
+.footer__social-link:nth-child(2) {
+  background: #333333;
+}
+
+.footer__social-link:nth-child(2):hover {
+  background: #24292e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.4);
+}
+
+/* Twitter - Light Blue */
+.footer__social-link:nth-child(3) {
+  background: #1da1f2;
+}
+
+.footer__social-link:nth-child(3):hover {
+  background: #0d8bd9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.4);
+}
+
+/* Instagram - Pink/Red */
+.footer__social-link:nth-child(4) {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.footer__social-link:nth-child(4):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
+}
+/* Telegram (example: 6th icon in the list) */
+.footer__social-link:nth-child(5) {
+  background: #0088CC; /* Telegram blue */
+}
+
+.footer__social-link:nth-child(5):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+}
+
+
+.footer__copyright {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Light Mode Styles */
+.App:not(.dark-mode) .footer {
+  background: #60b9f0;
+  color: #33333381;
+}
+
+.App:not(.dark-mode) .footer__social-text {
+  color: #666;
+}
+
+.App:not(.dark-mode) .footer__copyright {
+  color: #666;
+}
+
+/* Dark Mode Styles */
+.App.dark-mode .footer {
+  background: #23272f;
+  color: #ffffff;
+}
+
+.App.dark-mode .footer__social-text {
+  color: #a0a0a0;
+}
+
+.App.dark-mode .footer__copyright {
+  color: #a0a0a0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+  }
+  
+  .footer__content {
+    padding: 0 1rem;
+  }
+  
+  .footer__social {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .footer__social-text {
+    font-size: 1rem;
+  }
+  
+  .footer__social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.8rem;
+    padding: 1.2rem 0;
+  }
+  
+  .footer__social-link {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .footer__social-icons {
+    gap: 0.8rem;
+  }
+} 

@@ -1,0 +1,112 @@
+/* src/styles/resume.css */
+.resume-container {
+    position: fixed;
+    left: -10000px;
+    visibility: hidden;
+    width: 794px; /* A4 width at 96dpi */
+    background-color: white;
+    color: black;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  
+  .resume-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .resume-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .resume-section {
+    margin-bottom: 25px;
+  }
+  
+  .resume-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .resume-two-column {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .resume-left-column {
+    width: 35%;
+  }
+  
+  .resume-right-column {
+    width: 65%;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    border: 3px solid #2c3e50;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .resume-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resume-list-item {
+    margin-bottom: 8px;
+  }
+  
+  .resume-link {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .resume-bullet-list {
+    padding-left: 20px;
+  }
+  
+  .resume-bullet-item {
+    margin-bottom: 8px;
+  }
+  
+  .skills-category {
+    margin-bottom: 15px;
+  }
+  
+  .skills-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+.resume-bullet-list {
+    padding-left: 15px;
+    margin: 5px 0;
+    list-style-type: square; /* Add this line for square bullets */
+  }
+  
+  .resume-bullet-item {
+    margin-bottom: 4px;
+    font-size: 12px;
+    list-style-type: inherit; /* Ensures children inherit the square style */
+  }
