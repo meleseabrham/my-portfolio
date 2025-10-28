@@ -96,7 +96,7 @@ const softSkills = [
         { 
           name: 'GitHub', 
           icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/github.svg', 
-          color: '#181717' // GitHub black
+          color: '#418af7ff' // GitHub black
         }
 
 
