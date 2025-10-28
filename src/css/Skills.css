@@ -90,10 +90,10 @@
 }
 
 /* Dark mode adjustments */
-body.dark-mode .skills__category-title span {
+.App.dark-mode .skills__category-title span {
   color: #ffffff;
 }
-body.dark-mode .skills__category-title::after {
+.App.dark-mode .skills__category-title::after {
   opacity: 0.9;
 }
 .skills__bar {
@@ -315,15 +315,21 @@ body.dark-mode .skills__category-title::after {
     border-radius: 8px;
   }
 }
-body.dark-mode .skills {
+.App.dark-mode .skills {
   background: #18191a;
   color: #f5f6fa;
 }
-body.dark-mode .skills__category, body.dark-mode .skills__soft-card, body.dark-mode .skills__tool-card {
+.App.dark-mode .skills__category, .App.dark-mode .skills__soft-card, .App.dark-mode .skills__tool-card {
   background: #23272f;
   color: #f5f6fa;
 }
-body.dark-mode .bar__fill {
+/* Ensure headings inside cards are white in dark mode */
+.App.dark-mode .skills__soft-card h4,
+.App.dark-mode .skills__tool-card h4,
+.App.dark-mode .skills__category h3 {
+  color: #ffffff;
+}
+.App.dark-mode .bar__fill {
   background: #4ea1f7;
 }
 
@@ -370,9 +376,9 @@ body.dark-mode .bar__fill {
 }
 
 /* Dark mode tweaks for marquee */
-body.dark-mode .skills__marquee {
+.App.dark-mode .skills__marquee {
   border-color: rgba(255,255,255,0.08);
 }
-body.dark-mode .skills__marquee-item {
+.App.dark-mode .skills__marquee-item {
   color: #4ea1f7;
 }
