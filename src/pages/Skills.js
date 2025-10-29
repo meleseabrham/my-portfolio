@@ -116,7 +116,7 @@ const Skills = () => {
   const [tab, setTab] = useState('technical');
   return (
     <section className="skills" id="skills">
-      <h2>Skills </h2>
+         <h2><span>Skills</span></h2>
       <p>Technical competences and professional skills I've developed through experience and continuous learning</p>
       <div className="skills__tabs">
         <button className={tab === 'technical' ? 'active' : ''} onClick={() => setTab('technical')}>Technical</button>

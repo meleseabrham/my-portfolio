@@ -109,10 +109,31 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
     };
   }, []);
 
+  // Close menu on Escape
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    if (menuOpen) {
+      window.addEventListener('keydown', onKeyDown);
+    }
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
+
   return (
     <nav className="navbar">
       <div className="navbar__left">
+        <button
+          className={`navbar__menu-icon${menuOpen ? ' open' : ''}`}
+          onClick={handleMenuToggle}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        >
+          <span className="menu-icon-bar"></span>
+          <span className="menu-icon-bar"></span>
+          <span className="menu-icon-bar"></span>
+        </button>
         <div className="navbar__logo" onClick={() => window.location.reload()} style={{ cursor: 'pointer' }}>
+          <span className="logo-initials" aria-hidden="true">MA</span>
           <img src="/assets/img/logo.png" alt="Portfolio Logo" className="logo-img" /><span className="logo-text"><u>MA</u></span>
         </div>
       </div>
@@ -129,20 +150,11 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
           </button>
         </li>
       </ul>
+      {menuOpen && <div className="navbar__overlay" onClick={() => setMenuOpen(false)} />}
       <div className="navbar__right">
-      <button className="navbar__toggle mobile-toggle" onClick={onToggleDarkMode} aria-label="Toggle dark mode">
+        <button className="navbar__toggle mobile-toggle" onClick={onToggleDarkMode} aria-label="Toggle dark mode">
           {darkMode ? '🌙' : '☀️'}
         </button>
-        <button
-          className="navbar__menu-icon"
-          onClick={handleMenuToggle}
-          aria-label="Toggle navigation menu"
-        >
-          <span className="menu-icon-bar"></span>
-          <span className="menu-icon-bar"></span>
-          <span className="menu-icon-bar"></span>
-        </button>
-       
       </div>
     </nav>
   );
