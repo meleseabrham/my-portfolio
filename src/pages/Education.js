@@ -384,7 +384,7 @@ const Education = () => {
                   </p>
                   <p
                     style={{
-                      backgroundColor: "rgba(168, 185, 180, 0.34)",
+                      backgroundColor: "rgba(127, 206, 182, 0.72)",
                       padding: "6px",
                       borderRadius: "4px",
                     }}
