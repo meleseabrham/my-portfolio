@@ -12,7 +12,7 @@
 }
 .projects__filters {
   /* Hide the filters UI; keep pagination and cards as-is */
-  display: none;
+  display: none !important;
 }
 .projects__filters button {
   background: #fff;
@@ -329,15 +329,7 @@
 }
 /* Mobile devices only */
 @media (max-width: 600px) {
-  .projects__filters {
-    display: flex;            /* Keep buttons in a row */
-    flex-wrap: nowrap;        /* Prevent wrapping */
-    overflow-x: auto;         /* Enable horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
-    gap: 1.5rem;              /* Space between buttons */
-    justify-content: flex-start; 
-    margin-left: 35px;
-  }
+  .projects__filters { display: none !important; }
 
   .projects__filters button {
     flex: 0 0 auto;           /* Keep original button size, don’t shrink */
@@ -358,11 +350,7 @@
   }
 }
 @media (max-width: 480px) {
-  .projects__filters {
-    flex-wrap: wrap;
-    overflow-x: auto;
-    padding-bottom: 0;
-  }
+  .projects__filters { display: none !important; }
  
   .projects__card {
     /* Use container-relative width to avoid viewport overflow inside padded parents */
