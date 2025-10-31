@@ -66,19 +66,19 @@ const HeroSection = () => {
             </span>
           </div>
           <p>I create creative software experiences by merging creativity and logic to transform code into solutions you can see, apply, and believe on.</p>
-          <div className="hero__socials">
-            {/* {socials.map((s) => (
+          {/* <div className="hero__socials">
+             {socials.map((s) => (
               <a href={s.href} aria-label={s.label} key={s.label} target="_blank" rel="noopener noreferrer">
                 <div className="card-icon-circle" style={{ background: s.color }}>
                   <img src={s.icon} alt={s.label} />
                 </div>
               </a>
-            ))} */}
+            ))} 
           </div>
           <div className="hero__buttons">
-            {/* <DownloadButton />
-            <a href="#contact" className="contact-btn">Contact Me</a> */}
-          </div>
+            <DownloadButton />
+            <a href="#contact" className="contact-btn">Contact Me</a> 
+          </div> */}
           <div className="hero__skills">
             {quickSkills.map((skill) => (
               <span key={skill.name} className="hero-skill-icon">
