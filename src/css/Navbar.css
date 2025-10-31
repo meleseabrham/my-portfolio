@@ -11,14 +11,16 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background: #b0adad6f;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  background: #cdd3d3; /* make header opaque so content won't show through */
+  /* stronger bottom shadow */
+  box-shadow: 0 8px 20px rgba(86, 84, 84, 0.662), 0 1px 0 rgba(0,0,0,0.06);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: var(--navbar-height);
-  z-index: 100;
+  z-index: 120;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 .navbar__right {
   display: flex;
@@ -203,6 +205,39 @@ body {
   .logo-initials { display: inline-flex; }
   .logo-img, .logo-text { display: none; }
 }
+
+/* Mobile menu theming - LIGHT MODE */
+@media (max-width: 768px) {
+  .App:not(.dark-mode) .navbar__links {
+    background: #ffffff; /* solid light background for the drawer */
+    box-shadow: 8px 0 20px rgba(0,0,0,0.12);
+  }
+  .App:not(.dark-mode) .navbar__links li a {
+    color: #111111;
+  }
+  .App:not(.dark-mode) .navbar__links li a.active {
+    color: #0a66c2;
+    border-bottom-color: #0a66c2;
+  }
+}
+
+/* Mobile menu theming - DARK MODE (kept consistent) */
+@media (max-width: 768px) {
+  .App.dark-mode .navbar__links {
+    background: #1d706b; /* deeper than page background for contrast */
+    box-shadow: 8px 0 24px rgba(0,0,0,0.5);
+  }
+  .App.dark-mode .navbar__links li a {
+    color: #e5e7eb; /* light gray */
+  }
+  .App.dark-mode .navbar__links li a.active {
+    color: #4f8cff;
+    border-bottom-color: #4f8cff;
+  }
+  .App.dark-mode .navbar__overlay {
+    background: rgba(0,0,0,0.5);
+  }
+}
 @media (min-width: 769px) {
   .navbar {
     display: flex;
@@ -259,8 +294,9 @@ body.dark-mode {
   color: #f5f6fa;
 }
 body.dark-mode .navbar {
-  background: #18191a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background: #0b1220; /* opaque dark */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 body.dark-mode .navbar__links li a {
   color: #e0e6f7;
