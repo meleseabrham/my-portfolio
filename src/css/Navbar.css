@@ -164,7 +164,7 @@ body {
     top: var(--navbar-height);
     left: 0;
     right: auto;
-    width: 80vw;
+    width: 50vw;
     max-width: 360px;
     background: inherit;
     flex-direction: column;
