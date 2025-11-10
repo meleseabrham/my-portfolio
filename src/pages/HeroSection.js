@@ -5,12 +5,12 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import DownloadButton from '../components/DownloadButton';
 
-const socials = [
-  { href: 'https://www.linkedin.com/in/melese-abrham', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/linkedin.svg', color: '#1976d2' },
-  { href: 'https://github.com/meleseabrham', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/github.svg', color: '#222' },
-  { href: 'https://x.com/meleseabrham17', label: 'Twitter', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/twitter.svg', color: '#1da1f2' },
-  { href: 'https://www.instagram.com/melesse_ab/', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/instagram.svg', color: '#e1306c' },
-];
+// const socials = [
+//   { href: 'https://www.linkedin.com/in/melese-abrham', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/linkedin.svg', color: '#1976d2' },
+//   { href: 'https://github.com/meleseabrham', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/github.svg', color: '#222' },
+//   { href: 'https://x.com/meleseabrham17', label: 'Twitter', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/twitter.svg', color: '#1da1f2' },
+//   { href: 'https://www.instagram.com/melesse_ab/', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/instagram.svg', color: '#e1306c' },
+// ];
 
 const quickSkills = [
  { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg', color: '#61dafb' },

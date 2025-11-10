@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../css/AboutMe.css';
-import DownloadButton from '../components/DownloadButton';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 const aboutCards = [
   {
