@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { FiHome, FiUser, FiFileText, FiCode, FiFolder, FiMail } from 'react-icons/fi';
 import '../css/Navbar.css';
 
 const Navbar = ({ onToggleDarkMode, darkMode }) => {
@@ -138,12 +139,25 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
         </div>
       </div>
       <ul className={`navbar__links${menuOpen ? ' active' : ''}`}>
-        <li><a href="#home" className={active === 'home' ? 'active' : ''} onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>
-        <li><a href="#about" className={active === 'about' ? 'active' : ''} onClick={(e) => handleLinkClick(e, 'about')}>About</a></li>
-        <li><a href="#education" className={active === 'education' ? 'active' : ''} onClick={(e) => handleLinkClick(e, 'education')}>Resume</a></li>
-        <li><a href="#skills" className={active === 'skills' ? 'active' : ''} onClick={(e) => handleLinkClick(e, 'skills')}>Skills</a></li>
-        <li><a href="#projects" className={active === 'projects' ? 'active' : ''} onClick={(e) => handleLinkClick(e, 'projects')}>Projects</a></li>
-        {/* <li><a href="#contact" className={active === 'contact' ? 'active' : ''} onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a></li> */}
+        {[
+          { id: 'home', label: 'Home', Icon: FiHome },
+          { id: 'about', label: 'About', Icon: FiUser },
+          { id: 'education', label: 'Resume', Icon: FiFileText },
+          { id: 'skills', label: 'Skills', Icon: FiCode },
+          { id: 'projects', label: 'Projects', Icon: FiFolder },
+          // { id: 'contact', label: 'Contact', Icon: FiMail },
+        ].map(({ id, label, Icon }) => (
+          <li key={id}>
+            <a
+              href={`#${id}`}
+              className={active === id ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, id)}
+            >
+              <Icon className="nav-icon" aria-hidden="true" focusable="false" />
+              <span className="nav-label">{label}</span>
+            </a>
+          </li>
+        ))}
         <li className="desktop-toggle">
           <button className="navbar__toggle" onClick={onToggleDarkMode} aria-label="Toggle dark mode">
             {darkMode ? '☀️' : '🌙'}

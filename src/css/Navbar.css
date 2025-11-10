@@ -59,11 +59,13 @@ body {
   list-style: none;
 }
 .navbar__links li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   text-decoration: none;
   color: #222;
-  font-weight: 500;
+  font-weight: 700;
   transition: color 0.2s;
-  font-weight: bold;
 }
 .navbar__links li a:hover {
   color: #007bff;
@@ -316,16 +318,17 @@ body.dark-mode .menu-icon-bar {
   background: #f5f6fa;
 }
 .nav-icon {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-  margin-bottom: 2px;
-  filter: grayscale(1) brightness(0.7);
-  transition: filter 0.2s;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.navbar__links li a:hover .nav-icon {
-  filter: none;
+.navbar__links li a:hover .nav-icon,
+.navbar__links li a.active .nav-icon {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+.nav-label {
+  line-height: 1;
 }
 
 /* Ensure anchor scroll lands below fixed navbar */
