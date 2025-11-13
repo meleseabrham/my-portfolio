@@ -54,12 +54,12 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-.about__card.blue { border-left: 4px solid #007bff; }
-.about__card.green { border-left: 4px solid #28a745; }
-.about__card.orange { border-left: 4px solid #fd7e14; }
-.about__card.purple { border-left: 4px solid #6f42c1; }
-.about__card.teal { border-left: 4px solid #20c997; }
-.about__card.yellow { border-left: 4px solid #ffc107; }
+.about__card.blue { border-left: 2px solid #007bff; }
+.about__card.green { border-left: 2px solid #28a745; }
+.about__card.orange { border-left: 2px solid #fd7e14; }
+.about__card.purple { border-left: 2px solid #6f42c1; }
+.about__card.teal { border-left: 2px solid #20c997; }
+.about__card.yellow { border-left: 2px solid #ffc107; }
 .about__actions {
   margin-top: 2rem;
   display: flex;

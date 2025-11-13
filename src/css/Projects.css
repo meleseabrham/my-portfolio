@@ -107,12 +107,12 @@
   .projects__card { max-width: 600px; }
   .projects__gallery-item { width: 300px; height: 180px; }
 }
-.projects__card.green { border-left: 4px solid #28a745; }
-.projects__card.orange { border-left: 4px solid #fd7e14; }
-.projects__card.purple { border-left: 4px solid #6f42c1; }
-.projects__card.teal { border-left: 4px solid #20c997; }
-.projects__card.red { border-left: 4px solid #dc3545; }
-.projects__card.blue { border-left: 4px solid #007bff; }
+.projects__card.green { border-left: 2px solid #28a745; }
+.projects__card.orange { border-left: 2px solid #fd7e14; }
+.projects__card.purple { border-left: 2px solid #6f42c1; }
+.projects__card.teal { border-left: 2px solid #20c997; }
+.projects__card.red { border-left: 2px solid #dc3545; }
+.projects__card.blue { border-left: 2px solid #007bff; }
 .projects__tech {
   display: flex;
   gap: 0.5rem;
@@ -221,7 +221,7 @@
   border-color: rgba(255,255,255,0.1);
 }
 .demo-btn-project{
-  background: rgb(29, 24, 98);
+   background: rgb(43, 128, 232);
   color: #fff;
   border: none;
   padding: 0.8rem 0.8rem;
@@ -234,7 +234,7 @@
   border: 1px solid transparent;
 }
 .demo-btn-project:hover {
-  background: rgb(29, 24, 98);
+  background: rgb(71, 145, 235);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
   border-color: rgba(255,255,255,0.1);

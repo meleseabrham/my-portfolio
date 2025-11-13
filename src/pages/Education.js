@@ -367,7 +367,7 @@ const Education = () => {
                 <div
                   className={`education__card ${exp.className}`}
                   key={exp.title}
-                  style={{ borderLeft: `4px solid ${exp.color}` }}
+                  style={{ borderLeft: `2px solid ${exp.color}` }}
                 >
                   <div className="education__card-title-row education__card-title-left">
                     <div
