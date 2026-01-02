@@ -61,8 +61,8 @@ const projects = [
     tech: ["Flutter", "Node.js", "Supabase", "Firebase", "MySQL"],
     github: "https://github.com/meleseabrham",
     demo: "#",
-    color: "blue",
-    iconColor: "#1976d2",
+    color: "`blue`",
+    iconColor: "blue",
     screenshots: [
       require("../assets/screenshots/ecommerce1.jpg"),
       require("../assets/screenshots/ecommerce2.jpg"),
@@ -80,7 +80,7 @@ const projects = [
     github: "https://job-portal-whtp.vercel.app",
     demo: "#",
     color: "blue",
-    iconColor: "#1976d2",
+    iconColor: "#009cf1",
     screenshots: [
       require("../assets/screenshots/job.png"),
       require("../assets/screenshots/job1.png"),
@@ -88,7 +88,7 @@ const projects = [
       require("../assets/screenshots/job3.png"),
       require("../assets/screenshots/job4.png"),
       require("../assets/screenshots/job5.png"),
-      require("../assets/screenshots/job6.png"),     
+      require("../assets/screenshots/job6.png"),
     ],
   },
   {
@@ -99,7 +99,7 @@ const projects = [
     github: "https://github.com/meleseabrham",
     demo: "#",
     color: "purple",
-    iconColor: "#6f42c1",
+    iconColor: "#6610f2",
     screenshots: [
       require("../assets/screenshots/shopping1.png"),
       require("../assets/screenshots/shopping2.png"),
@@ -148,7 +148,7 @@ const projects = [
     github: "https://github.com/meleseabrham/weather-app",
     demo: "#",
     color: "red",
-    iconColor: "#ff4c60",
+    iconColor: "#dc3545",
     screenshots: [
       require("../assets/screenshots/weather1.jpg"),
       require("../assets/screenshots/weather2.jpg"),
@@ -163,7 +163,7 @@ const projects = [
     github: "https://github.com/meleseabrham/chat-application",
     demo: "#",
     color: "blue",
-    iconColor: "#1976d2",
+    iconColor: "#009cf1",
     screenshots: [require("../assets/screenshots/chat1.jpg")],
   },
   {
@@ -174,7 +174,7 @@ const projects = [
     github: "https://github.com/meleseabrham",
     demo: "#",
     color: "green",
-    iconColor: "#2ecc40",
+    iconColor: "#03f13b",
     screenshots: [
       require("../assets/screenshots/portfolio1.png"),
       require("../assets/screenshots/portfolio2.png"),
@@ -188,7 +188,7 @@ const projects = [
     github: "https://github.com/meleseabrham/complain-management-system",
     demo: "#",
     color: "teal",
-    iconColor: "#20c997",
+    iconColor: "#27d1a1",
     screenshots: [require("../assets/screenshots/complain1.png")],
   },
 
@@ -272,10 +272,10 @@ const Projects = () => {
   return (
     <section className="projects" id="projects">
       <h2>
-       <span> My Projects</span>
+        <span> My Projects</span>
       </h2>
       <p>
-      My work that shows my technical proficiency and problem-solving abilities in a variety of domains
+        My work that shows my technical proficiency and problem-solving abilities in a variety of domains
       </p>
       <br />
       <div className="projects__filters">
@@ -334,19 +334,19 @@ const Projects = () => {
                     </div>
                   ))}
                 </div>
+                <div className="projects__tech">
+                  {proj.tech.map((t) => (
+                    <span key={t} className="tech-tag">
+                      {techIcons[t] ||
+                        techIcons[t.charAt(0).toUpperCase() + t.slice(1)] || (
+                          <SiJavascript style={{ color: "#F7DF1E" }} />
+                        )}
+                      <span className="tech-name">{t}</span>
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
-            <div className="projects__tech">
-              {proj.tech.map((t) => (
-                <span key={t} className="tech-tag">
-                  {techIcons[t] ||
-                    techIcons[t.charAt(0).toUpperCase() + t.slice(1)] || (
-                      <SiJavascript style={{ color: "#F7DF1E" }} />
-                    )}
-                  <span className="tech-name">{t}</span>
-                </span>
-              ))}
-            </div>
             <div className="projects__links">
               <a
                 href={proj.github}
@@ -400,7 +400,7 @@ const Projects = () => {
                 &gt;
               </button>
               <div className="modal-cta-overlay">
-                <div className="modal-cta-card">
+                {/* <div className="modal-cta-card">
                   <div className="modal-cta-title">
                     If you need source code or want to work together
                   </div>
@@ -411,7 +411,7 @@ const Projects = () => {
                   >
                     Contact Me
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="modal-counter">
