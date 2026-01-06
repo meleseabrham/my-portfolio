@@ -1,21 +1,28 @@
 .skills {
   padding: 4rem 2rem 2rem 2rem;
-  background: #ecebed;
+  background: radial-gradient(at 100% 0%, #e4657c31 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(29, 62, 40, 0.005) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(8, 220, 235, 0.336) 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(74, 107, 95) 0, transparent 50%);
   text-align: center;
 }
+
 .skills h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
+
 .skills h2 span {
   color: #007bff;
 }
+
 .skills__tabs {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin: 2rem 0 2rem 0;
 }
+
 .skills__tabs button {
   background: #fff;
   border: 1px solid #007bff;
@@ -28,10 +35,13 @@
   font-size: 1rem;
   white-space: nowrap;
 }
-.skills__tabs button.active, .skills__tabs button:hover {
+
+.skills__tabs button.active,
+.skills__tabs button:hover {
   background: #007bff;
   color: #fff;
 }
+
 .skills__categories {
   display: flex;
   gap: 2rem;
@@ -39,16 +49,34 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
 .skills__category {
-  background: #f7f9fb;
-  border-radius: 10px;
-  padding: 1.2rem 1.5rem;
-  min-width: 260px;
-  max-width: 340px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  min-width: 280px;
+  max-width: 360px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--glass-border);
   text-align: left;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
 }
+
+.skills__category:hover {
+  background: #49a0f736;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+}
+
+.App.dark-mode .skills__category {
+  background: var(--glass-bg-dark);
+  border: 1px solid var(--glass-border-dark);
+}
+
 .skills__category h3 {
   font-weight: bold;
   text-decoration: underline;
@@ -60,7 +88,8 @@
   align-items: center;
   gap: 0.6rem;
   margin: 0 0 0.75rem 0;
-  text-decoration: none; /* we'll add an underline accent */
+  text-decoration: none;
+  /* we'll add an underline accent */
   position: relative;
 }
 
@@ -86,16 +115,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.12));
 }
 
 /* Dark mode adjustments */
 .App.dark-mode .skills__category-title span {
   color: #ffffff;
 }
+
 .App.dark-mode .skills__category-title::after {
   opacity: 0.9;
 }
+
 .skills__bar {
   margin: 0.7rem 0;
   position: relative;
@@ -113,6 +144,7 @@
   font-size: 1.2rem;
   min-width: 1.2rem;
 }
+
 .bar {
   background: #e5e7eb;
   border-radius: 6px;
@@ -122,11 +154,12 @@
   overflow: hidden;
   position: relative;
 }
+
 .bar__fill {
-  background: linear-gradient(90deg, #4f8cff 0%, #20c997 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
   height: 100%;
-  border-radius: 6px 0 0 6px;
-  transition: width 0.8s ease-in-out;
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.1, 0, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
@@ -143,9 +176,15 @@
 }
 
 @keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
+
 .level {
   display: inline-block;
   font-weight: bold;
@@ -162,6 +201,7 @@
   z-index: 2;
   white-space: nowrap;
 }
+
 .skills__soft {
   display: flex;
   gap: 1rem;
@@ -169,13 +209,14 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
 .skills__soft-card {
   background: #f8fafc;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1.2rem 1.5rem;
   min-width: 220px;
   max-width: 260px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   text-align: left;
   margin-bottom: 1rem;
   display: flex;
@@ -183,18 +224,28 @@
   gap: 0.5rem;
   position: relative;
   padding-bottom: 2rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+.skills__soft-card:hover {
+  background: #abd3ef93;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
 .skills__soft-card .soft-header {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .skills__soft-card h4 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
   color: #18191a;
 }
+
 .skills__tools {
   display: flex;
   gap: 2rem;
@@ -202,20 +253,29 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
 .skills__tool-card {
   background: #f8fafc;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1.2rem 1.5rem;
   min-width: 220px;
   max-width: 260px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   text-align: left;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+.skills__tool-card:hover {
+  background: #f1f5f9;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
 .tool-icon {
   width: 32px;
   height: 32px;
@@ -223,6 +283,7 @@
   display: inline-block;
   vertical-align: middle;
 }
+
 .skills__tool-card h4 {
   margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
@@ -233,15 +294,18 @@
   align-items: center;
   gap: 0.5rem;
 }
+
 .skills__tool-card ul {
   list-style: none;
   padding: 0;
 }
+
 .skills__tool-card li {
   margin-bottom: 0.5rem;
   color: #007bff;
   font-weight: 500;
 }
+
 .skill-icon-circle {
   width: 48px;
   height: 48px;
@@ -250,9 +314,10 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
+
 .skill-icon-circle img {
   width: 28px;
   height: 28px;
@@ -272,39 +337,52 @@
   white-space: nowrap;
   z-index: 2;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-} 
+}
+
 @media (max-width: 1024px) {
-  .skills__categories, .skills__tools {
+
+  .skills__categories,
+  .skills__tools {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
+
   .skills__soft {
     grid-template-columns: repeat(2, 1fr);
     margin-left: 0;
   }
 }
+
 @media (max-width: 768px) {
   .skills {
     padding: 2rem 1rem 1rem 1rem;
   }
-  .skills__categories, .skills__tools {
+
+  .skills__categories,
+  .skills__tools {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
+
   .skills__soft {
     grid-template-columns: 1fr;
     margin-left: 0;
   }
 }
+
 @media (max-width: 480px) {
-  .skills__category, .skills__soft-card, .skills__tool-card {
+
+  .skills__category,
+  .skills__soft-card,
+  .skills__tool-card {
     min-width: 90vw;
     max-width: 98vw;
     padding: 1rem 0.5rem;
   }
 }
+
 @media (max-width: 600px) {
   .skills__tabs button {
     display: block;
@@ -315,20 +393,33 @@
     border-radius: 8px;
   }
 }
+
 .App.dark-mode .skills {
   background: #18191a;
   color: #f5f6fa;
 }
-.App.dark-mode .skills__category, .App.dark-mode .skills__soft-card, .App.dark-mode .skills__tool-card {
+
+.App.dark-mode .skills__category,
+.App.dark-mode .skills__soft-card,
+.App.dark-mode .skills__tool-card {
   background: #23272f;
   color: #f5f6fa;
 }
+
+.App.dark-mode .skills__soft-card:hover,
+.App.dark-mode .skills__tool-card:hover,
+.App.dark-mode .skills__category:hover {
+  background: #2d333b51;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
 /* Ensure headings inside cards are white in dark mode */
 .App.dark-mode .skills__soft-card h4,
 .App.dark-mode .skills__tool-card h4,
 .App.dark-mode .skills__category h3 {
   color: #ffffff;
 }
+
 .App.dark-mode .bar__fill {
   background: #4ea1f7;
 }
@@ -338,8 +429,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  border-top: 1px dashed rgba(0,0,0,0.08);
-  border-bottom: 1px dashed rgba(0,0,0,0.08);
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
   padding: 0.5rem 0;
   margin-top: 0.5rem;
 }
@@ -371,14 +462,20 @@
 }
 
 @keyframes skills-marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Dark mode tweaks for marquee */
 .App.dark-mode .skills__marquee {
-  border-color: rgba(255,255,255,0.08);
+  border-color: rgba(255, 255, 255, 0.08);
 }
+
 .App.dark-mode .skills__marquee-item {
   color: #4ea1f7;
 }

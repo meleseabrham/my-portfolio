@@ -5,9 +5,27 @@ import '../css/Navbar.css';
 const Navbar = ({ onToggleDarkMode, darkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('home');
+  const navbarRef = useRef(null);
   const ratiosRef = useRef({});
 
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside); // Support touch devices
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [menuOpen]);
   const handleLinkClick = (e, targetId) => {
     if (e) e.preventDefault();
     if (targetId) {
@@ -27,7 +45,7 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
   };
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'education', 'skills', 'projects', 'contact'];
+    const sectionIds = ['home', 'about', 'education', 'skills', 'projects', ];
     const elements = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -122,7 +140,7 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
   }, [menuOpen]);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navbarRef}>
       <div className="navbar__left">
         <button
           className={`navbar__menu-icon${menuOpen ? ' open' : ''}`}
@@ -134,7 +152,7 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
           <span className="menu-icon-bar"></span>
         </button>
         <div className="navbar__logo" onClick={() => window.location.reload()} style={{ cursor: 'pointer' }}>
-          <span className="logo-initials" aria-hidden="true">MA</span>
+          {/* <span className="logo-initials" aria-hidden="true">MA</span> */}
           <img src="/assets/img/logo.png" alt="Portfolio Logo" className="logo-img" /><span className="logo-text"><u>MA</u></span>
         </div>
       </div>

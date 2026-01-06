@@ -399,8 +399,8 @@ const Projects = () => {
               <button className="modal-nav-right" onClick={nextScreenshot}>
                 &gt;
               </button>
-              <div className="modal-cta-overlay">
-                {/* <div className="modal-cta-card">
+              {/* <div className="modal-cta-overlay">
+                <div className="modal-cta-card">
                   <div className="modal-cta-title">
                     If you need source code or want to work together
                   </div>
@@ -411,8 +411,8 @@ const Projects = () => {
                   >
                     Contact Me
                   </button>
-                </div> */}
-              </div>
+                </div>
+              </div> */}
             </div>
             <div className="modal-counter">
               {modalIndex + 1} / {modalProject.screenshots.length}
@@ -425,3 +425,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

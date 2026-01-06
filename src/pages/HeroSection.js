@@ -5,15 +5,8 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import DownloadButton from '../components/DownloadButton';
 
-// const socials = [
-//   { href: 'https://www.linkedin.com/in/melese-abrham', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/linkedin.svg', color: '#1976d2' },
-//   { href: 'https://github.com/meleseabrham', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/github.svg', color: '#222' },
-//   { href: 'https://x.com/meleseabrham17', label: 'Twitter', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/twitter.svg', color: '#1da1f2' },
-//   { href: 'https://www.instagram.com/melesse_ab/', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/instagram.svg', color: '#e1306c' },
-// ];
-
 const quickSkills = [
- { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg', color: '#61dafb' },
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg', color: '#61dafb' },
   { name: 'HTML', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg', color: '#e34f26' },
   { name: 'CSS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg', color: '#1572b6' },
   { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tailwindcss.svg', color: '#38bdf8' },
@@ -23,8 +16,6 @@ const quickSkills = [
   { name: 'PHP', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/php.svg', color: '#777BB4' },
   { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg', color: '#4479a1' },
   { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/flutter.svg', color: '#02569b' },
- 
-
 ];
 
 const HeroSection = () => {
@@ -35,6 +26,8 @@ const HeroSection = () => {
     const y = Math.sin(angle) * radius;
     return { x, y };
   };
+
+  const mobileRadius = 95;
 
   return (
     <section
@@ -52,7 +45,7 @@ const HeroSection = () => {
             <span className="hero__typewriter">
               <Typewriter
                 words={[
-                  " FullStack Software Developer_",
+                  " FullStack Developer_",
                   "Web Developer_",
                   "Android Developer_",
                 ]}
@@ -67,48 +60,95 @@ const HeroSection = () => {
           </div>
           <p>I create creative software experiences by merging creativity and logic to transform code into solutions you can see, apply, and believe on.</p>
           {/* <div className="hero__socials">
-             {socials.map((s) => (
+            {socials.map((s) => (
               <a href={s.href} aria-label={s.label} key={s.label} target="_blank" rel="noopener noreferrer">
                 <div className="card-icon-circle" style={{ background: s.color }}>
                   <img src={s.icon} alt={s.label} />
                 </div>
               </a>
-            ))} 
-          </div>
-          <div className="hero__buttons">
-            <DownloadButton />
-            <a href="#contact" className="contact-btn">Contact Me</a> 
+            ))}
           </div> */}
-          <div className="hero__skills">
+
+          {/* <div className="hero__buttons hero__buttons-desktop">
+            <DownloadButton />
+            <a href="#contact" className="contact-btn">Contact Me</a>
+          </div> */}
+          <div className="hero__skills hero__skills-desktop">
             {quickSkills.map((skill) => (
               <span key={skill.name} className="hero-skill-icon">
                 <div className="card-icon-circle" style={{ background: skill.color }}>
                   <img src={skill.icon} alt={skill.name} />
                 </div>
-               {skill.name}
+                {skill.name}
               </span>
             ))}
           </div>
+          <div className="hero__skills-mobile">
+            <div className="skills-mobile-diamond">
+              <span>FULL Stack</span>
+            </div>
+            <motion.div
+              className="skills-mobile-icons-container"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
+              {quickSkills.map((skill, index) => {
+                const mobilePosition = getPositionOnCircle(index, quickSkills.length, mobileRadius);
+                return (
+                  <motion.div
+                    key={`${skill.name}-mobile`}
+                    className="skills-mobile-icon"
+                    style={{
+                      x: mobilePosition.x,
+                      y: mobilePosition.y,
+                      '--icon-color': skill.color,
+                      position: 'absolute'
+                    }}
+                    animate={{
+                      rotate: -360,
+                    }}
+                    transition={{
+                      rotate: { repeat: Infinity, duration: 40, ease: "linear" },
+                    }}
+                  >
+                    <div className="card-icon-circle" style={{ background: skill.color }}>
+                      <img src={skill.icon} alt={skill.name} />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+          <br />
+          {/* <div className="hero__buttons hero__buttons-mobile">
+            <DownloadButton />
+            <a href="#contact" className="contact-btn">Contact Me</a>
+          </div> */}
         </div>
-        
+
         <div className="hero__image">
           <motion.img
             src={profileImg}
             alt="Profile"
             className="profile-img"
-            // animate={{ y: [0, -20, 0], rotate: [0, 8, -8, 0] }}
-            // transition={{
-            //   y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
-            //   rotate: { repeat: Infinity, duration: 4, ease: "easeInOut" }
-            // }}
+          // animate={{ y: [0, -20, 0], rotate: [0, 8, -8, 0] }}
+          // transition={{
+          //   y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+          //   rotate: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+          // }}
           />
-          
+
           {/* Animated skill icons around the profile image */}
-          <div className="floating-icons">
+          <motion.div
+            className="floating-icons"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          >
             {quickSkills.map((skill, index) => {
               const radius = 120; // Adjust this value to change the circle size
               const position = getPositionOnCircle(index, quickSkills.length, radius);
-              
+
               return (
                 <motion.div
                   key={skill.name}
@@ -119,13 +159,11 @@ const HeroSection = () => {
                     y: position.y,
                   }}
                   animate={{
-                    rotate: [0, 360],
-                    x: position.x,
-                    y: position.y,
+                    rotate: -360,
                     scale: [1, 1.1, 1],
                   }}
                   transition={{
-                    rotate: { repeat: Infinity, duration: 20 + index * 2, ease: "linear" },
+                    rotate: { repeat: Infinity, duration: 40, ease: "linear" },
                     scale: { repeat: Infinity, duration: 3, ease: "easeInOut", delay: index * 0.2 },
                     x: { type: 'spring', stiffness: 100, damping: 10 },
                     y: { type: 'spring', stiffness: 100, damping: 10 }
@@ -137,7 +175,7 @@ const HeroSection = () => {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

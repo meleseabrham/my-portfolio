@@ -1,6 +1,9 @@
 .projects {
   padding: 4rem 2rem 2rem 2rem;
-  background: #d5d5d6;
+  background: radial-gradient(at 100% 0%, #e4657c5d 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(29, 62, 40, 0.005) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(8, 220, 235, 0.767) 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(74, 107, 95) 0, transparent 50%);
   text-align: center;
 }
 

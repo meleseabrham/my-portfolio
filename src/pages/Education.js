@@ -121,7 +121,7 @@ const experience = [
   {
     title: "Software Developer",
     company: "Information Network Security Agency (INSA)",
-    period: "Feb 2025 - Present",
+    period: "Feb 2025 - Current",
     summary:
       "Working on secure web and mobile application development and digital forensics investigation.",
     responsibilities: [

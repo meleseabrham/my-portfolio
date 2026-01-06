@@ -2,6 +2,16 @@
 
 /* Light mode (default) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-bg-dark: rgba(15, 23, 42, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --transition: all 0.1s ease;
+
+}
+
 .App {
   background: #f4f6fa;
   color: #18191a;
@@ -11,6 +21,21 @@
 
 main {
   transition: background 0.3s, color 0.3s;
+  /* Footer is not fixed; avoid unnecessary whitespace above footer */
+  padding-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-bottom: 0;
+    /* no extra gap on mobile */
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-bottom: 0;
+  }
 }
 
 /* Card and section backgrounds */
@@ -24,7 +49,7 @@ main {
 .contact__card {
   background: #f8fafc;
   color: #18191a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   border-radius: 12px;
   transition: background 0.3s, color 0.3s;
 }
@@ -36,25 +61,33 @@ main {
   border: none;
   transition: background 0.2s, color 0.2s;
 }
+
 .btn-primary:hover {
   background: #0056b3;
 }
+
 .btn-outline {
   background: #fff;
   color: #007bff;
   border: 1px solid #007bff;
   transition: background 0.2s, color 0.2s;
 }
+
 .btn-outline:hover {
   background: #e3e9f7;
 }
 
 /* Dark mode */
-.App.dark-mode,
+.App.dark-mode {
+  background-color: var(--bg-dark);
+  color: #f1f5f9;
+}
+
 .App.dark-mode main {
   background: #181c24 !important;
   color: #f5f6fa;
 }
+
 .App.dark-mode .hero,
 .App.dark-mode .about,
 .App.dark-mode .education,
@@ -63,6 +96,7 @@ main {
 .App.dark-mode .contact {
   background: #181c24 !important;
 }
+
 .App.dark-mode .about__card,
 .App.dark-mode .education__card,
 .App.dark-mode .skills__category,
@@ -73,53 +107,77 @@ main {
 .App.dark-mode .contact__card {
   background: #23283b;
   color: #f5f6fa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
 .App.dark-mode .btn-primary {
   background: #fff;
   color: #23283b;
 }
+
 .App.dark-mode .btn-primary:hover {
   background: #007bff;
   color: #fff;
 }
+
 .App.dark-mode .btn-outline {
   background: #23283b;
   color: #fff;
   border: 1px solid #fff;
 }
+
 .App.dark-mode .btn-outline:hover {
   background: #181c24;
   color: #fff;
 }
+
 .App.dark-mode .hero__skills span,
 .App.dark-mode .projects__tech span {
   background: #23283b;
   color: #fff;
 }
+
 .App.dark-mode .profile-placeholder {
   background: #23283b;
   color: #bbb;
 }
+
 .App.dark-mode .footer {
-  background: #101114;
+  background: #2d4f69;
   color: #f5f6fa;
 }
+
 .App.dark-mode .navbar {
   background: #23283b;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
 .App.dark-mode .navbar__links li a {
   color: #fff;
 }
+
 .App.dark-mode .navbar__links li a:hover {
   color: #4ea1f7;
 }
+
 * {
   transition: background 0.3s, color 0.3s;
 }
-body, .App, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
+
+body,
+.App,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+input,
+textarea {
   font-family: 'Inter', 'Roboto', 'Poppins', Arial, Helvetica, sans-serif;
   font-display: swap;
 }
@@ -131,6 +189,7 @@ body, .App, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
     opacity: 0;
     transform: translateX(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -142,6 +201,7 @@ body, .App, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
     opacity: 0;
     transform: translateX(100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -153,6 +213,7 @@ body, .App, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -164,6 +225,7 @@ body, .App, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -181,7 +243,7 @@ html {
     transition: none;
     animation: none;
   }
-  
+
   .scroll-section.animate-in {
     opacity: 1;
     transform: none;

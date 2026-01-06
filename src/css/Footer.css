@@ -1,11 +1,18 @@
 .footer {
-  background: #000305;
-  color: #fdfdfd;
+  background: #050002;
+  color: #fff;
   text-align: center;
-  padding: 2rem 0;
-  border-radius: 10px;
+  padding: 1.75rem;
   font-size: 1rem;
- 
+  /* margin-top: 2rem; */
+  /* position: fixed; */
+  /* border-radius: 10px; */
+  /* flush to page; avoid visible white corners */
+  /* left: 0;
+  right: 0; */
+  bottom: 0;
+  width: 100%;
+  z-index: 500;
 }
 
 .footer__content {
@@ -39,11 +46,42 @@
   justify-content: center;
   width: 45px;
   height: 45px;
-  border-radius: 50%;
+  border-radius: 10px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   font-size: 1.2rem;
   color: #ffffff;
+  position: relative;
+  overflow: visible;
+}
+
+.footer__social-link:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.footer__social-label {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-6px, -50%);
+  background: inherit;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.footer__social-link:hover .footer__social-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-6px, -50%);
 }
 
 /* LinkedIn - Blue */
@@ -88,9 +126,11 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
 }
+
 /* Telegram (example: 6th icon in the list) */
 .footer__social-link:nth-child(5) {
-  background: #0088CC; /* Telegram blue */
+  background: #0088CC;
+  /* Telegram blue */
 }
 
 .footer__social-link:nth-child(5):hover {
@@ -136,42 +176,475 @@
 @media (max-width: 768px) {
   .footer {
     font-size: 0.9rem;
-    padding: 1.5rem 0;
+    padding: 1.2rem 0;
   }
-  
+
   .footer__content {
     padding: 0 1rem;
   }
-  
+
   .footer__social {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    position: static;
+    transform: none;
+    padding: 0;
   }
-  
+
   .footer__social-text {
     font-size: 1rem;
   }
-  
+
   .footer__social-link {
     width: 40px;
     height: 40px;
     font-size: 1.1rem;
   }
+
+  .footer__social-label {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 6px);
+    transform: translate(-50%, 0);
+    background: inherit;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .footer__social-link:hover .footer__social-label {
+    transform: translate(-50%, 0);
+  }
 }
 
 @media (max-width: 480px) {
   .footer {
-    font-size: 0.8rem;
-    padding: 1.2rem 0;
+    font-size: 0.78rem;
+    padding: 0.6rem 0;
+    /* minimize height on mobile */
   }
-  
+
+  .footer__social {
+    margin-bottom: 0.4rem;
+    gap: 0.6rem;
+  }
+
   .footer__social-link {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .footer__social-icons {
+    gap: 0.6rem;
+  }
+
+  .footer__copyright {
+    margin-top: 0.2rem;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 2rem 0;
+  }
+}
+
+/* Tablet and Desktop: make social icons a fixed vertical bar on the left */
+@media (min-width: 768px) {
+  .footer__social {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    margin: 0;
+    z-index: 600;
+    border-radius: 999px;
+  }
+
+  .footer__social-text {
+    display: none;
+  }
+
+  .footer__social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+/* Mobile Social Icons Bar */
+.mobile-social-bar {
+  position: fixed;
+  top: 50%;
+  right: -100px;
+  /* Start off-screen */
+  transform: translateY(-50%);
+  z-index: 1000;
+  transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-social-bar.show {
+  right: 15px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-social-bar.scrolling {
+  right: -100px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 3, 5, 0.9);
+  padding: 15px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  color: #ffffff;
+  position: relative;
+}
+
+.mobile-social-link:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Social platform colors for mobile */
+.mobile-social-link:nth-child(1) {
+  background: #0077b5;
+}
+
+/* LinkedIn */
+.mobile-social-link:nth-child(2) {
+  background: #333333;
+}
+
+/* GitHub */
+.mobile-social-link:nth-child(3) {
+  background: #1da1f2;
+}
+
+/* Twitter */
+.mobile-social-link:nth-child(4) {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Instagram */
+.mobile-social-link:nth-child(5) {
+  background: #0088CC;
+}
+
+/* Telegram */
+
+/* Light mode styles for mobile social bar */
+.App:not(.dark-mode) .mobile-social-icons {
+  background: rgba(146, 156, 164, 0.984);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode styles for mobile social bar */
+.App.dark-mode .mobile-social-icons {
+  background: rgba(35, 39, 47, 0.95);
+}
+
+/* Hide mobile social bar on desktop */
+@media (min-width: 769px) {
+  .mobile-social-bar {
+    display: none;
+  }
+}
+
+/* Hide footer social icons on mobile */
+@media (max-width: 768px) {
+  .footer__social {
+    display: none !important;
+    /* Force hide on mobile */
+  }
+
+  .mobile-social-link {
+    width: 40px;
+    height: 40px;
     font-size: 1rem;
   }
-  
-  .footer__social-icons {
-    gap: 0.8rem;
+
+  .mobile-social-icons {
+    gap: 10px;
+    padding: 12px 6px;
   }
-} 
+}
+
+@media (max-width: 480px) {
+  .mobile-social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-social-icons {
+    gap: 8px;
+    padding: 10px 5px;
+  }
+
+  .mobile-social-bar.show {
+    right: 10px;
+  }
+}
+
+/* Keep your existing footer styles below */
+.footer {
+  background: #000305;
+  color: #fff;
+  text-align: center;
+  padding: 1.75rem 0;
+  font-size: 1rem;
+  /* border-radius: 10px; */
+  bottom: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Show footer social icons only on desktop */
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__social-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-size: 1.2rem;
+  color: #ffffff;
+  position: relative;
+  overflow: visible;
+}
+
+.footer__social-link:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.footer__social-label {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-6px, -50%);
+  background: inherit;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.footer__social-link:hover .footer__social-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-6px, -50%);
+}
+
+/* LinkedIn - Blue */
+.footer__social-link:nth-child(1) {
+  background: #0077b5;
+}
+
+.footer__social-link:nth-child(1):hover {
+  background: #005885;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.4);
+}
+
+/* GitHub - Dark */
+.footer__social-link:nth-child(2) {
+  background: #333333;
+}
+
+.footer__social-link:nth-child(2):hover {
+  background: #24292e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.4);
+}
+
+/* Twitter - Light Blue */
+.footer__social-link:nth-child(3) {
+  background: #1da1f2;
+}
+
+.footer__social-link:nth-child(3):hover {
+  background: #0d8bd9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.4);
+}
+
+/* Instagram - Pink/Red */
+.footer__social-link:nth-child(4) {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.footer__social-link:nth-child(4):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
+}
+
+/* Telegram */
+.footer__social-link:nth-child(5) {
+  background: #0088CC;
+}
+
+.footer__social-link:nth-child(5):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+}
+
+.footer__copyright {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Light Mode Styles */
+.App:not(.dark-mode) .footer {
+  background: #617887;
+  color: #33333381;
+}
+
+.App:not(.dark-mode) .footer__social-text {
+  color: #666;
+}
+
+.App:not(.dark-mode) .footer__copyright {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Dark Mode Styles */
+.App.dark-mode .footer {
+  background: #23272f;
+  color: #ffffff;
+}
+
+.App.dark-mode .footer__social-text {
+  color: #a0a0a0;
+}
+
+.App.dark-mode .footer__copyright {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Tablet and Desktop: make social icons a fixed vertical bar on the left */
+@media (min-width: 769px) {
+  .footer__social {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    margin: 0;
+    z-index: 600;
+    border-radius: 999px;
+  }
+
+  .footer__social-text {
+    display: none;
+  }
+
+  .footer__social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.9rem;
+    padding: 1.2rem 0;
+  }
+
+  .footer__content {
+    padding: 0 1rem;
+  }
+
+  .footer__copyright {
+    margin-top: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.78rem;
+    padding: 0.6rem 0;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 2rem 0;
+  }
+}
