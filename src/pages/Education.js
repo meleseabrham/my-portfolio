@@ -204,7 +204,7 @@ const Education = () => {
       };
 
       const start = parseMonthYear(startStr);
-      const end = /present/i.test(endStr) ? new Date() : parseMonthYear(endStr);
+      const end = /current/i.test(endStr) ? new Date() : parseMonthYear(endStr);
       if (!start || !end) return "";
 
       // Inclusive calculation (+1 to count both start and end months)
