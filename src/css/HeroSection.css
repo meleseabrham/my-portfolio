@@ -52,7 +52,12 @@
 }
 
 .hero__prefix {
-  color: #666;
+  color: #f50101;
+  font-weight: 400;
+}
+
+.App.dark-mode .hero__prefix {
+  color: #12d155;
   font-weight: 400;
 }
 
