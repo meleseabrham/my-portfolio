@@ -42,6 +42,8 @@ body {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  min-width: max-content;
 }
 
 .logo-initials {
@@ -161,7 +163,7 @@ body {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -275,7 +277,7 @@ body {
 }
 
 /* Mobile menu theming - LIGHT MODE */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .App:not(.dark-mode) .navbar__links {
     background: #ffffff;
     /* solid light background for the drawer */
@@ -293,7 +295,7 @@ body {
 }
 
 /* Mobile menu theming - DARK MODE (kept consistent) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .App.dark-mode .navbar__links {
     background: #1d706b;
     /* deeper than page background for contrast */
@@ -315,7 +317,7 @@ body {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .navbar {
     display: flex;
     flex-direction: row;
