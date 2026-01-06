@@ -65,6 +65,9 @@
   align-items: flex-start;
   min-height: 280px;
 }
+.projects__card:hover {
+  background: #007bff25;
+}
 
 /* Horizontal auto-scrolling gallery below description */
 .projects__gallery {
