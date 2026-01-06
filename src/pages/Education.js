@@ -159,7 +159,7 @@ const experience = [
 ];
 
 const Education = () => {
-  const [tab, setTab] = useState("formal");
+  const [tab, setTab] = useState("expert"); // 'formal', 'cert', 'expert'
   const [modalOpen, setModalOpen] = useState(false);
   const [modalCertificates, setModalCertificates] = useState([]);
   const [modalTitle, setModalTitle] = useState("");
@@ -281,13 +281,7 @@ const Education = () => {
       </p>
 
       <div className="education__tabs">
-        <button
-          className={tab === "formal" ? "active" : ""}
-          onClick={() => setTab("formal")}
-        >
-          {" "}
-          Education
-        </button>
+        
         <button
           className={tab === "expert" ? "active" : ""}
           onClick={() => setTab("expert")}
@@ -300,6 +294,13 @@ const Education = () => {
           onClick={() => setTab("cert")}
         >
           Certifications
+        </button>
+        <button
+          className={tab === "formal" ? "active" : ""}
+          onClick={() => setTab("formal")}
+        >
+          {" "}
+          Education
         </button>
       </div>
 

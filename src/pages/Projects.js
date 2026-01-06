@@ -61,6 +61,7 @@ const projects = [
     tech: ["Flutter", "Node.js", "Supabase", "Firebase", "MySQL"],
     github: "https://github.com/meleseabrham",
     demo: "#",
+    video: "https://drive.google.com/file/d/120YpotQ7gbr3DRB_j5am7tvrUwYdSOp2/preview",
     color: "`blue`",
     iconColor: "blue",
     screenshots: [
@@ -79,6 +80,7 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Node.js"],
     github: "https://job-portal-whtp.vercel.app",
     demo: "#",
+    video: "https://drive.google.com/file/d/1xDwvLozbzkKjQjYlARvRK5zabsVrEaNv/preview",
     color: "blue",
     iconColor: "#009cf1",
     screenshots: [
@@ -98,6 +100,7 @@ const projects = [
     tech: ["React", "Tailwind", "TypeScript", "Node.js", "Express", "MySQL"],
     github: "https://github.com/meleseabrham",
     demo: "#",
+    video: "https://drive.google.com/file/d/1lClv3D5nNbj3gIZzV0Kg3w1y56qTksnL/preview",
     color: "purple",
     iconColor: "#6610f2",
     screenshots: [
@@ -221,6 +224,9 @@ const Projects = () => {
   const [modalProject, setModalProject] = useState(null);
   const [modalIndex, setModalIndex] = useState(0);
 
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+
   // Control how many projects are shown per category
   const [showAll, setShowAll] = useState(false);
 
@@ -241,6 +247,16 @@ const Projects = () => {
   };
 
   const closeModal = () => setModalOpen(false);
+
+  const openVideoModal = (url) => {
+    setVideoUrl(url);
+    setVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setVideoModalOpen(false);
+    setVideoUrl("");
+  };
 
   const goToContact = () => {
     setModalOpen(false);
@@ -356,6 +372,15 @@ const Projects = () => {
               >
                 <FaGithub />
               </a>
+              {proj.video && (
+                <button
+                  type="button"
+                  className="video-btn"
+                  onClick={() => openVideoModal(proj.video)}
+                >
+                  View in Video
+                </button>
+              )}
               <button
                 type="button"
                 className="demo-btn"
@@ -399,7 +424,7 @@ const Projects = () => {
               <button className="modal-nav-right" onClick={nextScreenshot}>
                 &gt;
               </button>
-              {/* <div className="modal-cta-overlay">
+              <div className="modal-cta-overlay">
                 <div className="modal-cta-card">
                   <div className="modal-cta-title">
                     If you need source code or want to work together
@@ -412,10 +437,31 @@ const Projects = () => {
                     Contact Me
                   </button>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className="modal-counter">
               {modalIndex + 1} / {modalProject.screenshots.length}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Video Modal */}
+      {videoModalOpen && (
+        <div className="modal-overlay" onClick={closeVideoModal}>
+          <div className="modal-content video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeVideoModal}>
+              ×
+            </button>
+            <div className="video-container">
+              <iframe
+                src={videoUrl}
+                width="100%"
+                height="100%"
+                allow="autoplay"
+                title="Project Video"
+                frameBorder="0"
+              ></iframe>
             </div>
           </div>
         </div>
