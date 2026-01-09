@@ -1,9 +1,6 @@
 .skills {
   padding: 4rem 2rem 2rem 2rem;
-  background: radial-gradient(at 100% 0%, #e4657c31 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(29, 62, 40, 0.005) 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(8, 220, 235, 0.336) 0, transparent 50%),
-    radial-gradient(at 0% 100%, rgb(74, 107, 95) 0, transparent 50%);
+  background: transparent;
   text-align: center;
 }
 
@@ -271,7 +268,7 @@
 }
 
 .skills__tool-card:hover {
-  background: #f1f5f9;
+  background: #007bff15;
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
@@ -395,14 +392,14 @@
 }
 
 .App.dark-mode .skills {
-  background: #18191a;
+  background: transparent;
   color: #f5f6fa;
 }
 
 .App.dark-mode .skills__category,
 .App.dark-mode .skills__soft-card,
 .App.dark-mode .skills__tool-card {
-  background: #23272f;
+  background: var(--glass-bg-dark);
   color: #f5f6fa;
 }
 

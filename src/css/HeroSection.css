@@ -1,8 +1,7 @@
 .hero {
-  padding: 4rem 0 2rem 0;
-  background:
-    radial-gradient(at 100% 0%, rgba(120, 180, 190, 0.35) 0, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(80, 130, 150, 0.4) 0, transparent 50%);
+  padding: 10rem 0 2rem 0;
+  background: transparent;
+  /* light slate */
 
   display: flex;
   justify-content: center;
@@ -768,7 +767,7 @@
 }
 
 body.dark-mode .hero {
-  background: #23272f;
+  background: transparent;
   color: #f5f6fa;
 }
 

@@ -1,9 +1,6 @@
 .about {
   padding: 4rem 0 2rem 0;
-  background: radial-gradient(at 100% 0%, #e8dddf0a 0, transparent 50%),
-    radial-gradient(at 100% 0%, #0e96b400 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(82, 185, 203, 0.258) 0, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(74, 107, 95, 0.352) 0, transparent 50%);
+  background: transparent;
   text-align: center;
 }
 
@@ -416,7 +413,7 @@
 }
 
 body.dark-mode .about {
-  background: #0f0f0f;
+  background: transparent;
   color: #ffffff;
 }
 
@@ -427,7 +424,7 @@ body.dark-mode .about__card {
 
 /* Dark mode card backgrounds with distinct colors */
 body.dark-mode .about__card.blue {
-  background: #282C34;
+  background: var(--glass-bg-dark);
 }
 
 body.dark-mode .about__card.green {
