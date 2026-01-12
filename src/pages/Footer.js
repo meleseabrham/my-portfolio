@@ -52,7 +52,7 @@ const Footer = () => {
             ))}
           </div>
         </div> */}
-        <p className="footer__copyright">© 2025 Melese Abrham. All rights reserved.</p>
+        <p className="footer__copyright">© 2025 Melese Abrham.</p>
       </div>
     </footer>
   );
