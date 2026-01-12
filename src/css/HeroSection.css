@@ -197,8 +197,10 @@
 }
 
 .hero__image {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
+  /* margin-top: -50px; */
+  margin-right: auto;
   border-radius: 100px;
   overflow: visible;
   /* allow floating icons to show around the image */
@@ -672,6 +674,16 @@
   font-size: 2rem;
   color: #bbb;
   background: #e3e9f7;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  border: 4px solid #fff;
+  background: #e3e9f7;
   /*image color */
   filter: grayscale(100%);
   transition: filter 0.5s ease, transform 0.3s ease;
@@ -681,15 +693,6 @@
   /*image colo hover */
   filter: grayscale(80%);
   transform: scale(1.05);
-}
-.profile-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-  border: 4px solid #fff;
-  background: #e3e9f7;
 }
 
 /* Ensure circular shape even if other rules override */
