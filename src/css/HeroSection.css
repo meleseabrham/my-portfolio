@@ -672,8 +672,16 @@
   font-size: 2rem;
   color: #bbb;
   background: #e3e9f7;
+  /*image color */
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.3s ease;
 }
 
+.profile-img:hover {
+  /*image colo hover */
+  filter: grayscale(80%);
+  transform: scale(1.05);
+}
 .profile-img {
   width: 100%;
   height: 100%;
