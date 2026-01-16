@@ -226,6 +226,7 @@ const Projects = () => {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
 
   // Control how many projects are shown per category
   const [showAll, setShowAll] = useState(false);
@@ -244,6 +245,7 @@ const Projects = () => {
     setModalProject(project);
     setModalIndex(0);
     setModalOpen(true);
+    setIsHovering(false);
   };
 
   const closeModal = () => setModalOpen(false);
@@ -284,6 +286,23 @@ const Projects = () => {
       );
     }
   };
+
+  // Auto-scroll logic for modal screenshots
+  React.useEffect(() => {
+    let interval;
+    if (
+      modalOpen &&
+      modalProject &&
+      modalProject.screenshots &&
+      modalProject.screenshots.length > 1 &&
+      !isHovering
+    ) {
+      interval = setInterval(() => {
+        nextScreenshot();
+      }, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [modalOpen, modalProject, modalIndex, isHovering]);
 
   return (
     <section className="projects" id="projects">
@@ -413,17 +432,24 @@ const Projects = () => {
             </button>
             <div className="modal-title">{modalProject.title}</div>
             <div className="modal-screenshot-container">
-              <button className="modal-nav-left" onClick={prevScreenshot}>
-                &lt;
-              </button>
+              {modalProject.screenshots.length > 1 && (
+                <button className="modal-nav-left" onClick={prevScreenshot}>
+                  &lt;
+                </button>
+              )}
               <img
+                key={modalIndex}
                 src={modalProject.screenshots[modalIndex]}
                 alt={`Screenshot ${modalIndex + 1}`}
-                className="modal-screenshot"
+                className="modal-screenshot slide-in"
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
               />
-              <button className="modal-nav-right" onClick={nextScreenshot}>
-                &gt;
-              </button>
+              {modalProject.screenshots.length > 1 && (
+                <button className="modal-nav-right" onClick={nextScreenshot}>
+                  &gt;
+                </button>
+              )}
               {/* <div className="modal-cta-overlay">
                 <div className="modal-cta-card">
                   <div className="modal-cta-title">

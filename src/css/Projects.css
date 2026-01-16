@@ -644,7 +644,7 @@ body.dark-mode .projects__card p {
 }
 
 .modal-cta-card {
-  background: rgba(70, 69, 69, 0.55);
+  background: rgba(70, 69, 69, 0.842);
   color: #fff;
   padding: 1rem 1.25rem;
   border-radius: 12px;
@@ -687,6 +687,22 @@ body.dark-mode .projects__card p {
   image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
+}
+
+.modal-screenshot.slide-in {
+  animation: slideRightToLeft 0.5s ease-out forwards;
+}
+
+@keyframes slideRightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .modal-nav-left,
