@@ -176,18 +176,18 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
             </a>
           </li>
         ))}
-        <li className="desktop-toggle">
+        {/* <li className="desktop-toggle">
           <button className="navbar__toggle" onClick={onToggleDarkMode} aria-label="Toggle dark mode">
             {darkMode ? '☀️' : '🌙'}
           </button>
-        </li>
+        </li> */}
       </ul>
       {menuOpen && <div className="navbar__overlay" onClick={() => setMenuOpen(false)} />}
-      <div className="navbar__right">
+      {/* <div className="navbar__right">
         <button className="navbar__toggle mobile-toggle" onClick={onToggleDarkMode} aria-label="Toggle dark mode">
           {darkMode ? '☀️' : '🌙'}
         </button>
-      </div>
+      </div> */}
     </nav>
   );
 };

@@ -169,7 +169,7 @@ main {
 }
 
 .App.dark-mode .navbar {
-  background: #23283b;
+  background: #111111;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -179,7 +179,7 @@ main {
 }
 
 .App.dark-mode .navbar__links li a:hover {
-  color: #4ea1f7;
+  color: #02fd4d;
 }
 
 * {

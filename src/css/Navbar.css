@@ -1,5 +1,5 @@
 :root {
-  --navbar-height: 64px;
+  --navbar-height: 74px;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  background: var(--glass-bg);
+  background: #111111;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -77,7 +77,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #334155;
+  color: #fff;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 12px;
@@ -85,8 +85,8 @@ body {
 }
 
 .navbar__links li a:hover {
-  background: rgba(79, 70, 229, 0.1);
-  color: var(--primary);
+  background: rgba(4, 228, 101, 0.1);
+  color: #02fd4d;
 }
 
 .navbar__links li a.active {
@@ -102,8 +102,8 @@ body {
 }
 
 .App.dark-mode .navbar__links li a:hover {
-  background: rgba(79, 70, 229, 0.2);
-  color: #fff;
+  background: rgba(4, 228, 101, 0.1);
+  color: #02fd4d;
 }
 
 .App.dark-mode .navbar__links li a.active {
@@ -289,15 +289,15 @@ body {
   }
 
   .App:not(.dark-mode) .navbar__links li a.active {
-    color: #0a66c2;
-    border-bottom-color: #0a66c2;
+    color: #e61c60;
+    border-bottom-color: #e61c60;
   }
 }
 
 /* Mobile menu theming - DARK MODE (kept consistent) */
 @media (max-width: 1024px) {
   .App.dark-mode .navbar__links {
-    background: #1d706b;
+    background: #02736f;
     /* deeper than page background for contrast */
     box-shadow: 8px 0 24px rgba(0, 0, 0, 0.5);
   }
@@ -308,8 +308,8 @@ body {
   }
 
   .App.dark-mode .navbar__links li a.active {
-    color: #4f8cff;
-    border-bottom-color: #4f8cff;
+    color: #e61c60;
+    border-bottom-color: #e61c60;
   }
 
   .App.dark-mode .navbar__overlay {
@@ -347,6 +347,7 @@ body {
   .logo-img,
   .logo-text {
     display: inline-block;
+    color: #fff;
   }
 
   .desktop-toggle {
