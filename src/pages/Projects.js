@@ -55,7 +55,7 @@ const techIcons = {
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "E-Commerce Application",
     type: "fullstack",
     desc: "A full-stack e-commerce platform built with Flutter, and Supabase.\nA comprehensive online store with payment integration and admin dashboard.",
     tech: ["Flutter", "Node.js", "Supabase", "Firebase", "MySQL"],
