@@ -257,7 +257,7 @@
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #501f1f 0%, #f20404 100%);
+  background: rgb(124, 157, 16);
   color: #fff;
   border: none;
   padding: 0.5rem 0.8rem;
@@ -271,17 +271,17 @@
 }
 
 .demo-btn:hover {
-  background: linear-gradient(135deg, #f20404 0%, #501f1f 100%);
+  background: rgb(94, 118, 16);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
 .video-btn {
-  background: #0056b3;
+  background: #0b0d0e;
   color: #fff;
   border: none;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 10px;
   font-weight: bold;
   font-size: 0.95rem;
@@ -292,7 +292,7 @@
 }
 
 .video-btn:hover {
-  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+  background: #49545a;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
@@ -345,8 +345,8 @@
 }
 
 .demo-btn-project {
-  background: rgb(43, 128, 232);
-  color: #fff;
+  background: rgb(208, 194, 0);
+  color: #000000;
   border: none;
   padding: 0.8rem 0.8rem;
   border-radius: 10px;
@@ -359,7 +359,7 @@
 }
 
 .demo-btn-project:hover {
-  background: rgb(71, 145, 235);
+  background: rgb(217, 203, 2);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
   border-color: rgba(255, 255, 255, 0.1);
