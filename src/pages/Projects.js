@@ -62,7 +62,7 @@ const projects = [
     github: "https://github.com/meleseabrham",
     demo: "#",
     video: "https://drive.google.com/file/d/120YpotQ7gbr3DRB_j5am7tvrUwYdSOp2/preview",
-    color: "`blue`",
+    color: "blue",
     iconColor: "blue",
     screenshots: [
       require("../assets/screenshots/ecommerce1.jpg"),
